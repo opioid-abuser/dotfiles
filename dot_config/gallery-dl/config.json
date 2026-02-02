@@ -1,0 +1,33 @@
+{
+    "extractor": {
+        "base-directory": "~/gallery-dl/",
+        "archive": "~/gallery-dl/archive.sqlite3",
+        "instagram": {
+            "cookies": ["firefox"],
+            "directory": [
+                "Instagram",
+                "{subcategory!c}"
+            ],
+            "highlights": {
+                "directory": [
+                    "Instagram",
+                    "Highlights",
+                    "{highlight_title}"
+                ]
+            },
+            "filename": "{username}_{media_id}_{date}.{extension}"
+        },
+        "twitter": {
+            "cookies": ["firefox"],
+            "directory": [
+                "Twitter",
+                "{subcategory!c}"
+            ],
+            "filename": "{author['name']}_{tweet_id}_{date}.{extension}"
+        },
+        "patreon": {
+            "cookies": ["firefox"],
+            "filename": "{id}_{title[:200]}_{num:>02}.{extension}"
+        }
+    }
+}
