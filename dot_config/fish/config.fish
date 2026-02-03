@@ -12,5 +12,5 @@ alias reboot='sudo reboot now'
 alias kate='vscodium'
 
 function fish_prompt
-    echo (set_color blue -o) (whoami)@(hostname)(set_color normal):(prompt_pwd) (set_color normal)'>'
+    echo (set_color blue -o) (whoami)@(hostname)(set_color normal):(prompt_pwd) (set_color normal)'> '
 end
