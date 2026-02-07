@@ -1,59 +1,47 @@
 {
   "modules": [
     {
-      "type": "cpu",
+      "type": "command",
       "key": "|cpu",
-      "format": "{name}",
-			"keyColor": "blue"
+      "text": "lscpu | grep 'Model name' | cut -d ':' -f 2 | awk '{$1=$1}1' | cut -d ' ' -f 1,2,3,4 | tr '[:upper:]' '[:lower:]'",
+      "keyColor": "blue"
     },
     {
-      "type": "gpu",
+      "type": "command",
       "key": "|gpu",
-      "format": "{name}",
-			"keyColor": "blue"
-    },{
-  "modules": [
-    {
-      "type": "cpu",
-      "key": "|cpu",
-      "format": "{name}",
-			"keyColor": "blue"
-    },
-    {
-      "type": "gpu",
-      "key": "|gpu",
-      "format": "{name}",
-			"keyColor": "blue"
+      "text": "glxinfo | grep 'OpenGL renderer' | cut -d ' ' -f 4,5,6,7,8 | tr '[:upper:]' '[:lower:]'",
+      "keyColor": "blue"
     },
     {
       "type": "memory",
       "key": "|ram",
       "format": "{1} {3} / {2}",
-			"keyColor": "blue"
+      "keyColor": "blue"
     },
     {
       "type": "disk",
       "key": "|dsk",
       "folders": ["/"],
       "format": "{1} {3} / {2}",
-			"keyColor": "blue",
+      "keyColor": "blue",
     },
     {
       "type": "kernel",
       "key": "|knl",
       "format": "{1} {2}",
-			"keyColor": "blue"
+      "keyColor": "blue"
     },
     {
       "type": "custom",
       "key": "|dtp",
       "format":"{$XDG_SESSION_MANAGER} in {$XDG_SESSION_DESKTOP} in {$SHELL}",
-			"keyColor": "blue"
+      "keyColor": "blue"
     },
     {
       "type":"uptime",
       "key":"|upt",
-			"keyColor": "blue"
+      "format":"{days}d {hours}h {minutes}m",
+      "keyColor": "blue"
     },
 
   ],
@@ -72,58 +60,7 @@
   },
   "display":{
     "separator":" ",
-    "size":{
-      "binaryPrefix":"jedec"
-    }
-  }
-}
-    {
-      "type": "memory",
-      "key": "|ram",
-      "format": "{1} {3} / {2}",
-			"keyColor": "blue"
-    },
-    {
-      "type": "disk",
-      "key": "|dsk",
-      "folders": ["/"],
-      "format": "{1} {3} / {2}",
-			"keyColor": "blue",
-    },
-    {
-      "type": "kernel",
-      "key": "|knl",
-      "format": "{1} {2}",
-			"keyColor": "blue"
-    },
-    {
-      "type": "custom",
-      "key": "|dtp",
-      "format":"{$XDG_SESSION_MANAGER} in {$XDG_SESSION_DESKTOP} in {$SHELL}",
-			"keyColor": "blue"
-    },
-    {
-      "type":"uptime",
-      "key":"|upt",
-			"keyColor": "blue"
-    },
 
-  ],
-  
-  "logo": {
-    "source":"arch",
-    "type": "small",
-    "color":{
-      "1":"blue",
-      "2":"blue"
-    },
-    "padding": {
-      "right":1,
-      "left":1
-    }
-  },
-  "display":{
-    "separator":" ",
     "size":{
       "binaryPrefix":"jedec"
     }
