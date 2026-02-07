@@ -3,6 +3,7 @@
 spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-at-startup "alacritty"
 spawn-at-startup "/usr/bin/dunst"
+spawn-sh-at-startup "vicinae server"
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -34,7 +35,7 @@ input {
 
         xkb {
             layout "fr"
-            variant "nodeadkeys"
+           // variant "nodeadkeys"
         }
     }
 
@@ -44,7 +45,7 @@ input {
     }
 
     warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="100%"
 }
 
 output "DP-1" {
@@ -68,9 +69,9 @@ output "DP-1" {
     }
 }
 output "DP-2" {
-	mode "2560x1440@143.995"
+    mode "2560x1440@143.995"
     scale 1
-	transform "270"
+    transform "270"
 
     hot-corners {
         off
@@ -118,13 +119,35 @@ animations {
     slowdown 1.1
 }
 
-workspace "osu" {
+workspace "e" {
+    open-on-output "DP-1"
+    layout {
+        gaps 64
+
+        struts {
+            left 64
+            right 64
+            bottom 64
+            top 64
+        }
+        border {
+            off
+        }
+    }
+}
+
+workspace "a" {
     open-on-output "DP-1"
 }
 
+workspace "o" {
+    open-on-output "DP-1"
+}
+
+
 window-rule {
   match app-id=r#"osu!"#
-  open-on-workspace "osu"
+  open-on-workspace "o"
   open-maximized true
 }
 
@@ -264,7 +287,7 @@ binds {
     Mod+C { center-column; }
     Mod+Ctrl+C { center-visible-columns; }
 
-    Mod+V       { toggle-window-floating; }
+    Mod+Ctrl+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     Mod+W { toggle-column-tabbed-display; }
@@ -275,6 +298,7 @@ binds {
 
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
-
+    Mod+V repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+Space repeat=false { spawn "vicinae" "toggle"; }
     Mod+exclam { power-off-monitors; }
 }
