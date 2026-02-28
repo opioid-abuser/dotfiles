@@ -1,0 +1,15 @@
+daemonize
+indicator-caps-lock
+color=000000
+indicator-idle-visible
+ring-color=FFFFFF
+ring-ver-color=CC00CC
+
+separator-color=000000
+ring-ver-color=000000
+
+line-color=000000
+line-clear-color=000000
+line-caps-lock-color=000000
+line-ver-color=000000
+line-wrong-color=000000
