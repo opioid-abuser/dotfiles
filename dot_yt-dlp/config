@@ -1,0 +1,7 @@
+-o ~/yt-dlp/%(uploader)s-%(uploader_id)s-%(title)s_%(id)s.%(ext)s
+--download-archive ~/yt-dlp/archive.txt
+--cookies-from-browser firefox
+
+--extractor-retries infinite
+--sleep-requests 1
+--sleep-interval 0
